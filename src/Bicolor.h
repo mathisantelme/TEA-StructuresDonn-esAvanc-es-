@@ -10,11 +10,13 @@
 #endif
 
 #ifndef MAX
-#define MAX (x, y) ((x) < (y) ? (x) : (y))
+#define MAX(x, y) ((x) < (y) ? (x) : (y))
 #endif
 
+typedef int Element;
+
 typedef struct Noeud {
-    void * element;
+    Element element;
     struct Noeud * filsG;
     struct Noeud * filsD;
     struct Noeud * parent;
@@ -24,7 +26,7 @@ typedef struct Noeud {
 typedef Noeud * pt_Arbre;
 typedef pt_Arbre Bicolor;
 
-Bicolor arbre_create (void * e);
+Bicolor arbre_create (Element e);
 int arbre_hauteur (Bicolor arbre);
 int arbre_nb_noeuds (Bicolor arbre);
 Bicolor arbre_grand_parent (Bicolor arbre);
@@ -35,7 +37,8 @@ void arbre_free (Bicolor arbre);
 int arbre_compare (Bicolor a, Bicolor b);
 void arbre_print (Bicolor arbre, int n);
 
-/*Bicolor arbre_balance (Bicolor arbre);
+/*
+Bicolor arbre_balance (Bicolor arbre);
 Bicolor arbre_add_element (void * e, int color, Bicolor arbre);
 Bicolor arbre_suppr (Bicolor arbre, void * e);
 void * arbre_suppr_success (Bicolor arbre);

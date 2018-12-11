@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA/src/Bicolor.c
+/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.c
 stdio.h
 -
 stdlib.h
 -
 Bicolor.h
-/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA/src/Bicolor.h
+/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.h
 
-/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA/src/Bicolor.h
+/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.h
 stdio.h
 -
 stdlib.h
 -
 
-/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA/src/Test-Bicolor.c
+/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Test-Bicolor.c
 stdio.h
 -
 

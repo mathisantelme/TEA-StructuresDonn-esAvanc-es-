@@ -3,7 +3,7 @@
 
 #include "Bicolor.h"
 
-Bicolor arbre_create (void * e) {
+Bicolor arbre_create (Element e) {
     Bicolor arbre = (Bicolor) malloc(sizeof(Noeud));
     
     if (arbre) {
@@ -11,6 +11,7 @@ Bicolor arbre_create (void * e) {
         arbre->filsG = NULL;
         arbre->filsD = NULL;
         arbre->parent = NULL;
+        arbre->color = BLACK;
     } else {
         return NULL;
     }
