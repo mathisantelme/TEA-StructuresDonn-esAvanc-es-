@@ -95,15 +95,13 @@ Bicolor arbre_RotD (Bicolor arbre, Noeud * node) {
 }
 
 
-/* int arbre_hauteur (Bicolor arbre) {
+int arbre_hauteur (Bicolor arbre) {
     return (arbre == NULL) ? 0 : MAX(arbre_hauteur(arbre->filsD), arbre_hauteur(arbre->filsG)) + 1;
 }
 
 int arbre_nb_noeuds (Bicolor arbre) {
     return (arbre == NULL) ? 0 : arbre_nb_noeuds(arbre->filsG) + arbre_nb_noeuds(arbre->filsD) + 1;
 }
-
-
 
 void arbre_free(Bicolor arbre) {
     if (arbre) {
@@ -139,4 +137,4 @@ void arbre_print (Bicolor arbre, int n) {
         arbre_print(arbre->filsG, n + 1);
         arbre_print(arbre->filsD, n + 1);
     }
-} */
+}
