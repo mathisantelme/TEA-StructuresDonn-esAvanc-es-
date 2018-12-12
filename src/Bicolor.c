@@ -104,6 +104,44 @@ int arbre_nb_noeuds (Bicolor arbre) {
     return (arbre == NULL) ? 0 : arbre_nb_noeuds(arbre->filsG) + arbre_nb_noeuds(arbre->filsD) + 1;
 }
 
+void arbre_recurive_insert (Noeud * node, Bicolor root) {
+    // on descend dans l'arbre de manière récursive jusqu'à une feuille
+    // si la valeur du noeud est inférieure a celle du noeud courant alors on insère a gauche
+    if (root && node->element < root->element) {
+        // si le sous-arbre gauche existe on appelle récursivement la fonction
+        if (root->filsG) {
+            arbre_recurive_insert(node, root->filsG);
+            return;
+        }
+        // sinon on insère le noeud
+        else
+            root->filsG = node;
+    }
+    // sinon on insère a droite (on vérifie que le noeud courant n'est pas null)
+    else if (root) {
+        // si le sous-arbre droit existe on appelle récursivement la fonction
+        if (root->filsD) {
+            arbre_recurive_insert(node, root->filsD);
+            return;
+        }
+        // sinon on insère le noeud
+        else
+            root->filsD = node;
+
+    }
+
+    // on ajuste les attributs du nouveau noeud
+    node->parent = root;
+    node->filsG = NULL;
+    node->filsD = NULL;
+    node->color = RED;
+}
+
+Bicolor arbre_add_element (Noeud * node, Bicolor root) {
+    // on insère notre noeud dans l'arbre de manière récursive
+    arbre_recurive_insert(node, root);
+}
+
 void arbre_free(Bicolor arbre) {
     if (arbre) {
         if (arbre->filsG)

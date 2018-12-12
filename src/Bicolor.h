@@ -37,9 +37,11 @@ void arbre_free (Bicolor arbre);
 int arbre_compare (Bicolor a, Bicolor b);
 void arbre_print (Bicolor arbre, int n);
 
+void arbre_recurive_insert (Noeud * node, Bicolor root);
+Bicolor arbre_add_element (Noeud * node, Bicolor root);
+
 /*
 Bicolor arbre_balance (Bicolor arbre);
-Bicolor arbre_add_element (void * e, int color, Bicolor arbre);
 Bicolor arbre_suppr (Bicolor arbre, void * e);
 void * arbre_suppr_success (Bicolor arbre);
 */

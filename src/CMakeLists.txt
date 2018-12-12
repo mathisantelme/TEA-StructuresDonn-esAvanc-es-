@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
 
-file(GLOB FILES "${CMAKE_CURRENT_SOURCE_DIR}/tests/test-*.c")
+SET(TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests/")
+file(GLOB FILES "${TEST_DIR}/test-*.c")
 
 enable_testing()
 

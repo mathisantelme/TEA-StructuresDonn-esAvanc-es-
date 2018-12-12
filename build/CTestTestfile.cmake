@@ -4,6 +4,7 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
+add_test(test-arbre_compare "./test-arbre_compare")
 add_test(test-arbre_create "./test-arbre_create")
 add_test(test-arbre_grand_parent "./test-arbre_grand_parent")
 add_test(test-arbre_hauteur "./test-arbre_hauteur")
