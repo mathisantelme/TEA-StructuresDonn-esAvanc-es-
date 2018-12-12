@@ -57,7 +57,76 @@ include CMakeFiles/test-arbre_create.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test-arbre_create.dir/flags.make
 
-CMakeFiles/test-arbre_create.dir/requires:
+CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o: CMakeFiles/test-arbre_create.dir/flags.make
+CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/test-arbre_create.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o   -c /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/test-arbre_create.c
+
+CMakeFiles/test-arbre_create.dir/test-arbre_create.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test-arbre_create.dir/test-arbre_create.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/test-arbre_create.c > CMakeFiles/test-arbre_create.dir/test-arbre_create.c.i
+
+CMakeFiles/test-arbre_create.dir/test-arbre_create.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test-arbre_create.dir/test-arbre_create.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/test-arbre_create.c -o CMakeFiles/test-arbre_create.dir/test-arbre_create.c.s
+
+CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o.requires:
+
+.PHONY : CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o.requires
+
+CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o.provides: CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o.requires
+	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o.provides.build
+.PHONY : CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o.provides
+
+CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o.provides.build: CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o
+
+
+CMakeFiles/test-arbre_create.dir/Bicolor.c.o: CMakeFiles/test-arbre_create.dir/flags.make
+CMakeFiles/test-arbre_create.dir/Bicolor.c.o: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/test-arbre_create.dir/Bicolor.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test-arbre_create.dir/Bicolor.c.o   -c /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.c
+
+CMakeFiles/test-arbre_create.dir/Bicolor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test-arbre_create.dir/Bicolor.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.c > CMakeFiles/test-arbre_create.dir/Bicolor.c.i
+
+CMakeFiles/test-arbre_create.dir/Bicolor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test-arbre_create.dir/Bicolor.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.c -o CMakeFiles/test-arbre_create.dir/Bicolor.c.s
+
+CMakeFiles/test-arbre_create.dir/Bicolor.c.o.requires:
+
+.PHONY : CMakeFiles/test-arbre_create.dir/Bicolor.c.o.requires
+
+CMakeFiles/test-arbre_create.dir/Bicolor.c.o.provides: CMakeFiles/test-arbre_create.dir/Bicolor.c.o.requires
+	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/Bicolor.c.o.provides.build
+.PHONY : CMakeFiles/test-arbre_create.dir/Bicolor.c.o.provides
+
+CMakeFiles/test-arbre_create.dir/Bicolor.c.o.provides.build: CMakeFiles/test-arbre_create.dir/Bicolor.c.o
+
+
+# Object files for target test-arbre_create
+test__arbre_create_OBJECTS = \
+"CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o" \
+"CMakeFiles/test-arbre_create.dir/Bicolor.c.o"
+
+# External object files for target test-arbre_create
+test__arbre_create_EXTERNAL_OBJECTS =
+
+test-arbre_create: CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o
+test-arbre_create: CMakeFiles/test-arbre_create.dir/Bicolor.c.o
+test-arbre_create: CMakeFiles/test-arbre_create.dir/build.make
+test-arbre_create: CMakeFiles/test-arbre_create.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable test-arbre_create"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test-arbre_create.dir/link.txt --verbose=$(VERBOSE)
+
+# Rule to build all files generated by this target.
+CMakeFiles/test-arbre_create.dir/build: test-arbre_create
+
+.PHONY : CMakeFiles/test-arbre_create.dir/build
+
+CMakeFiles/test-arbre_create.dir/requires: CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o.requires
+CMakeFiles/test-arbre_create.dir/requires: CMakeFiles/test-arbre_create.dir/Bicolor.c.o.requires
 
 .PHONY : CMakeFiles/test-arbre_create.dir/requires
 

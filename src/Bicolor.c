@@ -35,64 +35,24 @@ Bicolor arbre_uncle (Bicolor node) {
         return g->filsG;
 }
 
-Bicolor arbre_RotG (Bicolor arbre, Noeud * node) {
+void arbre_RotG (Noeud * root) {
     Noeud * temp;
-    if (node) {
-        temp = node->filsD;
-        // sous-arbre gauche -> sous-arbre droit de node
-        node->filsD = node;
-        if (temp->filsG->parent)
-            temp->filsG->parent = node;
 
-        // nouveau parent de temp est le parent de node
-        temp->parent = node->parent;
+    temp = root->filsD;
+    root->filsD = temp->filsG;
+    temp->filsG = root;
 
-        // parent pointe sur temp au lieu de node
-        // on vérifie qu'on est pas a la racine
-        if (node->parent == NULL)
-            arbre->parent = temp;
-        else if (node == (node->parent)->filsG)
-            // node est l'enfant gauche
-            node->parent->filsG = temp;
-        else
-            // node est l'enfant droit
-            node->parent->filsD = temp;
-
-        // mettre node sur la partie gauche de temp
-        temp->filsG = node;
-        node->parent = temp;
-    }
-    return node;
+    root = temp;
 }
 
-Bicolor arbre_RotD (Bicolor arbre, Noeud * node) {
+void arbre_RotD (Noeud * root) {
     Noeud * temp;
-    if (node) {
-        temp = node->filsG;
-        // sous-arbre gauche -> sous-arbre droit de node
-        node->filsG = node;
-        if (temp->filsD->parent)
-            temp->filsD->parent = node;
 
-        // nouveau parent de temp est le parent de node
-        temp->parent = node->parent;
+    temp = root->filsG;
+    root->filsG = temp->filsD;
+    temp->filsD = root;
 
-        // parent pointe sur temp au lieu de node
-        // on vérifie qu'on est pas a la racine
-        if (node->parent == NULL)
-            arbre->parent = temp;
-        else if (node == (node->parent)->filsD)
-            // node est l'enfant gauche
-            node->parent->filsD = temp;
-        else
-            // node est l'enfant droit
-            node->parent->filsG = temp;
-
-        // mettre node sur la partie gauche de temp
-        temp->filsD = node;
-        node->parent = temp;
-    }
-    return node;
+    root = temp;
 }
 
 
@@ -127,7 +87,6 @@ void arbre_recurive_insert (Noeud * node, Bicolor root) {
         // sinon on insère le noeud
         else
             root->filsD = node;
-
     }
 
     // on ajuste les attributs du nouveau noeud
@@ -137,9 +96,66 @@ void arbre_recurive_insert (Noeud * node, Bicolor root) {
     node->color = RED;
 }
 
+void arbre_balance (Noeud * node) {
+    // si on est à la racine de l'arbre
+    if (node->parent == NULL)
+            node->color = BLACK;
+    
+    // si le père est BLACK
+    else if (node->parent->color == BLACK)
+        return;
+    
+    // si le père est RED
+    else if (node->parent->color == RED) {
+        node->parent->color = BLACK;
+        arbre_uncle(node)->color = BLACK;
+        
+        Noeud * grandParent = arbre_grand_parent(node);
+        grandParent->color = RED;
+        arbre_balance(grandParent);
+    }
+    // si l'oncle du noeud courant est RED
+    else if (arbre_uncle(node)->color == RED) {
+        Noeud *parent = node->parent;
+        Noeud *grandParent = arbre_grand_parent(node);
+
+        // si le noeud courant est à droite de son parent qui est a gauche de son propre parent
+        if (node == grandParent->filsG->filsD) {
+            arbre_RotG(parent);
+            node = node->filsG;
+        }
+        // si le noeud courant est à gauche de son parent qui est a droite de son propre parent
+        else if (node == grandParent->filsD->filsG) {
+            arbre_RotD(parent);
+            node = node->filsD; 
+        }
+
+        // si le noeud courant est situé à gauche de son parent
+        if (node == parent->filsG)
+            arbre_RotD(grandParent);
+        // si le noeud courant est situé à droite de son parent
+        else
+            arbre_RotG(grandParent);
+        
+        parent->color = BLACK;
+        grandParent->color = RED;
+    }
+}
+
 Bicolor arbre_add_element (Noeud * node, Bicolor root) {
     // on insère notre noeud dans l'arbre de manière récursive
     arbre_recurive_insert(node, root);
+
+    // on équilibre l'arbre par rapport au noeud
+    arbre_balance(node);
+
+    // on cherche la nouvelle racine a retourner
+    root = node;
+
+    while (root->parent)
+        root = root->parent;
+        
+    return root;
 }
 
 void arbre_free(Bicolor arbre) {

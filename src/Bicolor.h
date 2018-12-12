@@ -31,17 +31,19 @@ int arbre_hauteur (Bicolor arbre);
 int arbre_nb_noeuds (Bicolor arbre);
 Bicolor arbre_grand_parent (Bicolor arbre);
 Bicolor arbre_uncle (Bicolor arbre);
-Bicolor arbre_RotG (Bicolor arbre, Noeud * node);
-Bicolor arbre_RotD (Bicolor arbre, Noeud * node);
+
+void arbre_RotG (Noeud * root);
+void arbre_RotD (Noeud * root);
+
 void arbre_free (Bicolor arbre);
 int arbre_compare (Bicolor a, Bicolor b);
 void arbre_print (Bicolor arbre, int n);
 
 void arbre_recurive_insert (Noeud * node, Bicolor root);
 Bicolor arbre_add_element (Noeud * node, Bicolor root);
+void arbre_balance (Noeud * root);
 
 /*
-Bicolor arbre_balance (Bicolor arbre);
 Bicolor arbre_suppr (Bicolor arbre, void * e);
 void * arbre_suppr_success (Bicolor arbre);
 */

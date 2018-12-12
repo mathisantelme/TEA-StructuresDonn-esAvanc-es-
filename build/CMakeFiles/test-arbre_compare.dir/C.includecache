@@ -20,7 +20,11 @@ stdio.h
 stdlib.h
 -
 
-/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Test-Bicolor.c
+/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/test-arbre_compare.c
 stdio.h
 -
+assert.h
+-
+Bicolor.h
+/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.h
 
