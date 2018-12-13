@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/test-abre_grand_parent.dir/test-abre_grand_parent.c.o CMakeFiles/test-abre_grand_parent.dir/__/Bicolor.c.o  -o test-abre_grand_parent 

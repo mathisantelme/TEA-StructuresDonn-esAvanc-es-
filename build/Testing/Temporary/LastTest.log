@@ -1,78 +1,165 @@
-Start testing: Dec 12 16:18 CET
+Start testing: Dec 13 12:17 CET
 ----------------------------------------------------------
-1/5 Testing: test-arbre_compare
-1/5 Test: test-arbre_compare
-Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/test-arbre_compare"
-Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build
-"test-arbre_compare" start time: Dec 12 16:18 CET
+1/10 Testing: test-abre_grand_parent
+1/10 Test: test-abre_grand_parent
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-abre_grand_parent"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-abre_grand_parent" start time: Dec 13 12:17 CET
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test-arbre_compare" end time: Dec 12 16:18 CET
+"test-abre_grand_parent" end time: Dec 13 12:17 CET
+"test-abre_grand_parent" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/10 Testing: test-arbre_add_element
+2/10 Test: test-arbre_add_element
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_add_element"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_add_element" start time: Dec 13 12:17 CET
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-arbre_add_element" end time: Dec 13 12:17 CET
+"test-arbre_add_element" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/10 Testing: test-arbre_balance
+3/10 Test: test-arbre_balance
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_balance"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_balance" start time: Dec 13 12:17 CET
+Output:
+----------------------------------------------------------
+Layer 0:
+5 > 1
+Layer 0:
+5 > 1
+Layer 1:
+0 > 0
+Layer 0:
+5 > 1
+Layer 1:
+0 > 0
+Layer 1:
+10 > 0
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-arbre_balance" end time: Dec 13 12:17 CET
+"test-arbre_balance" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/10 Testing: test-arbre_compare
+4/10 Test: test-arbre_compare
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_compare"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_compare" start time: Dec 13 12:17 CET
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-arbre_compare" end time: Dec 13 12:17 CET
 "test-arbre_compare" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/5 Testing: test-arbre_create
-2/5 Test: test-arbre_create
-Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/test-arbre_create"
-Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build
-"test-arbre_create" start time: Dec 12 16:18 CET
+5/10 Testing: test-arbre_create
+5/10 Test: test-arbre_create
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_create"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_create" start time: Dec 13 12:17 CET
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test-arbre_create" end time: Dec 12 16:18 CET
+"test-arbre_create" end time: Dec 13 12:17 CET
 "test-arbre_create" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/5 Testing: test-arbre_grand_parent
-3/5 Test: test-arbre_grand_parent
-Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/test-arbre_grand_parent"
-Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build
-"test-arbre_grand_parent" start time: Dec 12 16:18 CET
+6/10 Testing: test-arbre_grand_parent
+6/10 Test: test-arbre_grand_parent
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_grand_parent"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_grand_parent" start time: Dec 13 12:17 CET
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test-arbre_grand_parent" end time: Dec 12 16:18 CET
+"test-arbre_grand_parent" end time: Dec 13 12:17 CET
 "test-arbre_grand_parent" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/5 Testing: test-arbre_hauteur
-4/5 Test: test-arbre_hauteur
-Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/test-arbre_hauteur"
-Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build
-"test-arbre_hauteur" start time: Dec 12 16:18 CET
+7/10 Testing: test-arbre_hauteur
+7/10 Test: test-arbre_hauteur
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_hauteur"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_hauteur" start time: Dec 13 12:17 CET
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test-arbre_hauteur" end time: Dec 12 16:18 CET
+"test-arbre_hauteur" end time: Dec 13 12:17 CET
 "test-arbre_hauteur" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/5 Testing: test-arbre_nb_noeud
-5/5 Test: test-arbre_nb_noeud
-Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/test-arbre_nb_noeud"
-Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build
-"test-arbre_nb_noeud" start time: Dec 12 16:18 CET
+8/10 Testing: test-arbre_nb_noeud
+8/10 Test: test-arbre_nb_noeud
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_nb_noeud"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_nb_noeud" start time: Dec 13 12:17 CET
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test-arbre_nb_noeud" end time: Dec 12 16:18 CET
+"test-arbre_nb_noeud" end time: Dec 13 12:17 CET
 "test-arbre_nb_noeud" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Dec 12 16:18 CET
+9/10 Testing: test-arbre_recursive_insert
+9/10 Test: test-arbre_recursive_insert
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_recursive_insert"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_recursive_insert" start time: Dec 13 12:17 CET
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-arbre_recursive_insert" end time: Dec 13 12:17 CET
+"test-arbre_recursive_insert" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/10 Testing: test-arbre_uncle
+10/10 Test: test-arbre_uncle
+Command: "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests/test-arbre_uncle"
+Directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/tests
+"test-arbre_uncle" start time: Dec 13 12:17 CET
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-arbre_uncle" end time: Dec 13 12:17 CET
+"test-arbre_uncle" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 13 12:17 CET

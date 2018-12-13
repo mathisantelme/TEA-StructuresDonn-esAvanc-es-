@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/test-arbre_uncle.dir/test-arbre_uncle.c.o CMakeFiles/test-arbre_uncle.dir/__/Bicolor.c.o  -o test-arbre_uncle 

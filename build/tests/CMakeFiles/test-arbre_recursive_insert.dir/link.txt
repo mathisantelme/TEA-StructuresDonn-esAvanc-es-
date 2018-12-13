@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/test-arbre_recursive_insert.dir/test-arbre_recursive_insert.c.o CMakeFiles/test-arbre_recursive_insert.dir/__/Bicolor.c.o  -o test-arbre_recursive_insert 

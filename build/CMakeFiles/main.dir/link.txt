@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/main.dir/Main.c.o CMakeFiles/main.dir/Bicolor.c.o  -o main 

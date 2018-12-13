@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/test-arbre_grand_parent.dir/test-arbre_grand_parent.c.o CMakeFiles/test-arbre_grand_parent.dir/Bicolor.c.o  -o test-arbre_grand_parent 

@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o CMakeFiles/test-arbre_create.dir/__/Bicolor.c.o  -o test-arbre_create 

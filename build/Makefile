@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-Struc
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -122,17 +122,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test-arbre_create
+# Target rules for targets named main
 
 # Build rule for target.
-test-arbre_create: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_create
-.PHONY : test-arbre_create
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-test-arbre_create/fast:
-	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/build
-.PHONY : test-arbre_create/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named test-arbre_recursive_insert
+
+# Build rule for target.
+test-arbre_recursive_insert: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_recursive_insert
+.PHONY : test-arbre_recursive_insert
+
+# fast build rule for target.
+test-arbre_recursive_insert/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_recursive_insert.dir/build.make tests/CMakeFiles/test-arbre_recursive_insert.dir/build
+.PHONY : test-arbre_recursive_insert/fast
 
 #=============================================================================
 # Target rules for targets named test-arbre_nb_noeud
@@ -144,34 +157,8 @@ test-arbre_nb_noeud: cmake_check_build_system
 
 # fast build rule for target.
 test-arbre_nb_noeud/fast:
-	$(MAKE) -f CMakeFiles/test-arbre_nb_noeud.dir/build.make CMakeFiles/test-arbre_nb_noeud.dir/build
+	$(MAKE) -f tests/CMakeFiles/test-arbre_nb_noeud.dir/build.make tests/CMakeFiles/test-arbre_nb_noeud.dir/build
 .PHONY : test-arbre_nb_noeud/fast
-
-#=============================================================================
-# Target rules for targets named test-arbre_compare
-
-# Build rule for target.
-test-arbre_compare: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_compare
-.PHONY : test-arbre_compare
-
-# fast build rule for target.
-test-arbre_compare/fast:
-	$(MAKE) -f CMakeFiles/test-arbre_compare.dir/build.make CMakeFiles/test-arbre_compare.dir/build
-.PHONY : test-arbre_compare/fast
-
-#=============================================================================
-# Target rules for targets named test-arbre_grand_parent
-
-# Build rule for target.
-test-arbre_grand_parent: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_grand_parent
-.PHONY : test-arbre_grand_parent
-
-# fast build rule for target.
-test-arbre_grand_parent/fast:
-	$(MAKE) -f CMakeFiles/test-arbre_grand_parent.dir/build.make CMakeFiles/test-arbre_grand_parent.dir/build
-.PHONY : test-arbre_grand_parent/fast
 
 #=============================================================================
 # Target rules for targets named test-arbre_hauteur
@@ -183,8 +170,99 @@ test-arbre_hauteur: cmake_check_build_system
 
 # fast build rule for target.
 test-arbre_hauteur/fast:
-	$(MAKE) -f CMakeFiles/test-arbre_hauteur.dir/build.make CMakeFiles/test-arbre_hauteur.dir/build
+	$(MAKE) -f tests/CMakeFiles/test-arbre_hauteur.dir/build.make tests/CMakeFiles/test-arbre_hauteur.dir/build
 .PHONY : test-arbre_hauteur/fast
+
+#=============================================================================
+# Target rules for targets named test-arbre_add_element
+
+# Build rule for target.
+test-arbre_add_element: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_add_element
+.PHONY : test-arbre_add_element
+
+# fast build rule for target.
+test-arbre_add_element/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_add_element.dir/build.make tests/CMakeFiles/test-arbre_add_element.dir/build
+.PHONY : test-arbre_add_element/fast
+
+#=============================================================================
+# Target rules for targets named test-abre_grand_parent
+
+# Build rule for target.
+test-abre_grand_parent: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-abre_grand_parent
+.PHONY : test-abre_grand_parent
+
+# fast build rule for target.
+test-abre_grand_parent/fast:
+	$(MAKE) -f tests/CMakeFiles/test-abre_grand_parent.dir/build.make tests/CMakeFiles/test-abre_grand_parent.dir/build
+.PHONY : test-abre_grand_parent/fast
+
+#=============================================================================
+# Target rules for targets named test-arbre_compare
+
+# Build rule for target.
+test-arbre_compare: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_compare
+.PHONY : test-arbre_compare
+
+# fast build rule for target.
+test-arbre_compare/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_compare.dir/build.make tests/CMakeFiles/test-arbre_compare.dir/build
+.PHONY : test-arbre_compare/fast
+
+#=============================================================================
+# Target rules for targets named test-arbre_uncle
+
+# Build rule for target.
+test-arbre_uncle: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_uncle
+.PHONY : test-arbre_uncle
+
+# fast build rule for target.
+test-arbre_uncle/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_uncle.dir/build.make tests/CMakeFiles/test-arbre_uncle.dir/build
+.PHONY : test-arbre_uncle/fast
+
+#=============================================================================
+# Target rules for targets named test-arbre_balance
+
+# Build rule for target.
+test-arbre_balance: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_balance
+.PHONY : test-arbre_balance
+
+# fast build rule for target.
+test-arbre_balance/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_balance.dir/build.make tests/CMakeFiles/test-arbre_balance.dir/build
+.PHONY : test-arbre_balance/fast
+
+#=============================================================================
+# Target rules for targets named test-arbre_create
+
+# Build rule for target.
+test-arbre_create: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_create
+.PHONY : test-arbre_create
+
+# fast build rule for target.
+test-arbre_create/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_create.dir/build.make tests/CMakeFiles/test-arbre_create.dir/build
+.PHONY : test-arbre_create/fast
+
+#=============================================================================
+# Target rules for targets named test-arbre_grand_parent
+
+# Build rule for target.
+test-arbre_grand_parent: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_grand_parent
+.PHONY : test-arbre_grand_parent
+
+# fast build rule for target.
+test-arbre_grand_parent/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_grand_parent.dir/build.make tests/CMakeFiles/test-arbre_grand_parent.dir/build
+.PHONY : test-arbre_grand_parent/fast
 
 Bicolor.o: Bicolor.c.o
 
@@ -192,11 +270,7 @@ Bicolor.o: Bicolor.c.o
 
 # target to build an object file
 Bicolor.c.o:
-	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/Bicolor.c.o
-	$(MAKE) -f CMakeFiles/test-arbre_nb_noeud.dir/build.make CMakeFiles/test-arbre_nb_noeud.dir/Bicolor.c.o
-	$(MAKE) -f CMakeFiles/test-arbre_compare.dir/build.make CMakeFiles/test-arbre_compare.dir/Bicolor.c.o
-	$(MAKE) -f CMakeFiles/test-arbre_grand_parent.dir/build.make CMakeFiles/test-arbre_grand_parent.dir/Bicolor.c.o
-	$(MAKE) -f CMakeFiles/test-arbre_hauteur.dir/build.make CMakeFiles/test-arbre_hauteur.dir/Bicolor.c.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Bicolor.c.o
 .PHONY : Bicolor.c.o
 
 Bicolor.i: Bicolor.c.i
@@ -205,11 +279,7 @@ Bicolor.i: Bicolor.c.i
 
 # target to preprocess a source file
 Bicolor.c.i:
-	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/Bicolor.c.i
-	$(MAKE) -f CMakeFiles/test-arbre_nb_noeud.dir/build.make CMakeFiles/test-arbre_nb_noeud.dir/Bicolor.c.i
-	$(MAKE) -f CMakeFiles/test-arbre_compare.dir/build.make CMakeFiles/test-arbre_compare.dir/Bicolor.c.i
-	$(MAKE) -f CMakeFiles/test-arbre_grand_parent.dir/build.make CMakeFiles/test-arbre_grand_parent.dir/Bicolor.c.i
-	$(MAKE) -f CMakeFiles/test-arbre_hauteur.dir/build.make CMakeFiles/test-arbre_hauteur.dir/Bicolor.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Bicolor.c.i
 .PHONY : Bicolor.c.i
 
 Bicolor.s: Bicolor.c.s
@@ -218,147 +288,35 @@ Bicolor.s: Bicolor.c.s
 
 # target to generate assembly for a file
 Bicolor.c.s:
-	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/Bicolor.c.s
-	$(MAKE) -f CMakeFiles/test-arbre_nb_noeud.dir/build.make CMakeFiles/test-arbre_nb_noeud.dir/Bicolor.c.s
-	$(MAKE) -f CMakeFiles/test-arbre_compare.dir/build.make CMakeFiles/test-arbre_compare.dir/Bicolor.c.s
-	$(MAKE) -f CMakeFiles/test-arbre_grand_parent.dir/build.make CMakeFiles/test-arbre_grand_parent.dir/Bicolor.c.s
-	$(MAKE) -f CMakeFiles/test-arbre_hauteur.dir/build.make CMakeFiles/test-arbre_hauteur.dir/Bicolor.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Bicolor.c.s
 .PHONY : Bicolor.c.s
 
-test-arbre_compare.o: test-arbre_compare.c.o
+Main.o: Main.c.o
 
-.PHONY : test-arbre_compare.o
-
-# target to build an object file
-test-arbre_compare.c.o:
-	$(MAKE) -f CMakeFiles/test-arbre_compare.dir/build.make CMakeFiles/test-arbre_compare.dir/test-arbre_compare.c.o
-.PHONY : test-arbre_compare.c.o
-
-test-arbre_compare.i: test-arbre_compare.c.i
-
-.PHONY : test-arbre_compare.i
-
-# target to preprocess a source file
-test-arbre_compare.c.i:
-	$(MAKE) -f CMakeFiles/test-arbre_compare.dir/build.make CMakeFiles/test-arbre_compare.dir/test-arbre_compare.c.i
-.PHONY : test-arbre_compare.c.i
-
-test-arbre_compare.s: test-arbre_compare.c.s
-
-.PHONY : test-arbre_compare.s
-
-# target to generate assembly for a file
-test-arbre_compare.c.s:
-	$(MAKE) -f CMakeFiles/test-arbre_compare.dir/build.make CMakeFiles/test-arbre_compare.dir/test-arbre_compare.c.s
-.PHONY : test-arbre_compare.c.s
-
-test-arbre_create.o: test-arbre_create.c.o
-
-.PHONY : test-arbre_create.o
+.PHONY : Main.o
 
 # target to build an object file
-test-arbre_create.c.o:
-	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/test-arbre_create.c.o
-.PHONY : test-arbre_create.c.o
+Main.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Main.c.o
+.PHONY : Main.c.o
 
-test-arbre_create.i: test-arbre_create.c.i
+Main.i: Main.c.i
 
-.PHONY : test-arbre_create.i
-
-# target to preprocess a source file
-test-arbre_create.c.i:
-	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/test-arbre_create.c.i
-.PHONY : test-arbre_create.c.i
-
-test-arbre_create.s: test-arbre_create.c.s
-
-.PHONY : test-arbre_create.s
-
-# target to generate assembly for a file
-test-arbre_create.c.s:
-	$(MAKE) -f CMakeFiles/test-arbre_create.dir/build.make CMakeFiles/test-arbre_create.dir/test-arbre_create.c.s
-.PHONY : test-arbre_create.c.s
-
-test-arbre_grand_parent.o: test-arbre_grand_parent.c.o
-
-.PHONY : test-arbre_grand_parent.o
-
-# target to build an object file
-test-arbre_grand_parent.c.o:
-	$(MAKE) -f CMakeFiles/test-arbre_grand_parent.dir/build.make CMakeFiles/test-arbre_grand_parent.dir/test-arbre_grand_parent.c.o
-.PHONY : test-arbre_grand_parent.c.o
-
-test-arbre_grand_parent.i: test-arbre_grand_parent.c.i
-
-.PHONY : test-arbre_grand_parent.i
+.PHONY : Main.i
 
 # target to preprocess a source file
-test-arbre_grand_parent.c.i:
-	$(MAKE) -f CMakeFiles/test-arbre_grand_parent.dir/build.make CMakeFiles/test-arbre_grand_parent.dir/test-arbre_grand_parent.c.i
-.PHONY : test-arbre_grand_parent.c.i
+Main.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Main.c.i
+.PHONY : Main.c.i
 
-test-arbre_grand_parent.s: test-arbre_grand_parent.c.s
+Main.s: Main.c.s
 
-.PHONY : test-arbre_grand_parent.s
-
-# target to generate assembly for a file
-test-arbre_grand_parent.c.s:
-	$(MAKE) -f CMakeFiles/test-arbre_grand_parent.dir/build.make CMakeFiles/test-arbre_grand_parent.dir/test-arbre_grand_parent.c.s
-.PHONY : test-arbre_grand_parent.c.s
-
-test-arbre_hauteur.o: test-arbre_hauteur.c.o
-
-.PHONY : test-arbre_hauteur.o
-
-# target to build an object file
-test-arbre_hauteur.c.o:
-	$(MAKE) -f CMakeFiles/test-arbre_hauteur.dir/build.make CMakeFiles/test-arbre_hauteur.dir/test-arbre_hauteur.c.o
-.PHONY : test-arbre_hauteur.c.o
-
-test-arbre_hauteur.i: test-arbre_hauteur.c.i
-
-.PHONY : test-arbre_hauteur.i
-
-# target to preprocess a source file
-test-arbre_hauteur.c.i:
-	$(MAKE) -f CMakeFiles/test-arbre_hauteur.dir/build.make CMakeFiles/test-arbre_hauteur.dir/test-arbre_hauteur.c.i
-.PHONY : test-arbre_hauteur.c.i
-
-test-arbre_hauteur.s: test-arbre_hauteur.c.s
-
-.PHONY : test-arbre_hauteur.s
+.PHONY : Main.s
 
 # target to generate assembly for a file
-test-arbre_hauteur.c.s:
-	$(MAKE) -f CMakeFiles/test-arbre_hauteur.dir/build.make CMakeFiles/test-arbre_hauteur.dir/test-arbre_hauteur.c.s
-.PHONY : test-arbre_hauteur.c.s
-
-test-arbre_nb_noeud.o: test-arbre_nb_noeud.c.o
-
-.PHONY : test-arbre_nb_noeud.o
-
-# target to build an object file
-test-arbre_nb_noeud.c.o:
-	$(MAKE) -f CMakeFiles/test-arbre_nb_noeud.dir/build.make CMakeFiles/test-arbre_nb_noeud.dir/test-arbre_nb_noeud.c.o
-.PHONY : test-arbre_nb_noeud.c.o
-
-test-arbre_nb_noeud.i: test-arbre_nb_noeud.c.i
-
-.PHONY : test-arbre_nb_noeud.i
-
-# target to preprocess a source file
-test-arbre_nb_noeud.c.i:
-	$(MAKE) -f CMakeFiles/test-arbre_nb_noeud.dir/build.make CMakeFiles/test-arbre_nb_noeud.dir/test-arbre_nb_noeud.c.i
-.PHONY : test-arbre_nb_noeud.c.i
-
-test-arbre_nb_noeud.s: test-arbre_nb_noeud.c.s
-
-.PHONY : test-arbre_nb_noeud.s
-
-# target to generate assembly for a file
-test-arbre_nb_noeud.c.s:
-	$(MAKE) -f CMakeFiles/test-arbre_nb_noeud.dir/build.make CMakeFiles/test-arbre_nb_noeud.dir/test-arbre_nb_noeud.c.s
-.PHONY : test-arbre_nb_noeud.c.s
+Main.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Main.c.s
+.PHONY : Main.c.s
 
 # Help Target
 help:
@@ -366,32 +324,26 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... test-arbre_create"
 	@echo "... rebuild_cache"
-	@echo "... test-arbre_nb_noeud"
-	@echo "... test-arbre_compare"
+	@echo "... edit_cache"
+	@echo "... main"
 	@echo "... test"
-	@echo "... test-arbre_grand_parent"
+	@echo "... test-arbre_recursive_insert"
+	@echo "... test-arbre_nb_noeud"
 	@echo "... test-arbre_hauteur"
+	@echo "... test-arbre_add_element"
+	@echo "... test-abre_grand_parent"
+	@echo "... test-arbre_compare"
+	@echo "... test-arbre_uncle"
+	@echo "... test-arbre_balance"
+	@echo "... test-arbre_create"
+	@echo "... test-arbre_grand_parent"
 	@echo "... Bicolor.o"
 	@echo "... Bicolor.i"
 	@echo "... Bicolor.s"
-	@echo "... test-arbre_compare.o"
-	@echo "... test-arbre_compare.i"
-	@echo "... test-arbre_compare.s"
-	@echo "... test-arbre_create.o"
-	@echo "... test-arbre_create.i"
-	@echo "... test-arbre_create.s"
-	@echo "... test-arbre_grand_parent.o"
-	@echo "... test-arbre_grand_parent.i"
-	@echo "... test-arbre_grand_parent.s"
-	@echo "... test-arbre_hauteur.o"
-	@echo "... test-arbre_hauteur.i"
-	@echo "... test-arbre_hauteur.s"
-	@echo "... test-arbre_nb_noeud.o"
-	@echo "... test-arbre_nb_noeud.i"
-	@echo "... test-arbre_nb_noeud.s"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
 .PHONY : help
 
 
