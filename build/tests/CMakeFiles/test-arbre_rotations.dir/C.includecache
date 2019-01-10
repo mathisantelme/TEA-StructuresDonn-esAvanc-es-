@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src/Bicolor.c
+stdio.h
+-
+stdlib.h
+-
+Bicolor.h
+/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src/Bicolor.h
+
+/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src/Bicolor.h
+stdio.h
+-
+stdlib.h
+-
+
+/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src/tests/test-arbre_rotations.c
+stdio.h
+-
+assert.h
+-
+../Bicolor.h
+/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src/Bicolor.h
+

@@ -35,26 +35,77 @@ Bicolor arbre_uncle (Bicolor node) {
         return g->filsG;
 }
 
-void arbre_RotG (Noeud * root) {
-    Noeud * temp;
+void arbre_RotG (Bicolor * node) {
+    Bicolor temp;
+    Bicolor root = * node;
 
-    temp = root->filsD;
-    root->filsD = temp->filsG;
-    temp->filsG = root;
+    if (root != NULL) {
+        temp = root->filsD;
 
-    root = temp;
+        if (root->parent != NULL) {
+            if (root->parent->filsD == root)
+                root->parent->filsD = temp;
+            else if (root->parent->filsG == root)
+                root->parent->filsG = temp;
+        }
+
+        if (temp->filsG != NULL)
+            temp->filsG->parent = root;
+
+        temp->parent = root->parent;
+        root->parent = root->parent;
+        root->filsD = temp->filsG;
+        temp->filsG = root;
+        *node = temp;
+    }
 }
 
-void arbre_RotD (Noeud * root) {
-    Noeud * temp;
+void arbre_RotD (Bicolor * node) {
+    Bicolor temp;
+    Bicolor root = *node;
 
-    temp = root->filsG;
-    root->filsG = temp->filsD;
-    temp->filsD = root;
+    if (root != NULL) {
+        temp = root->filsG;
 
-    root = temp;
+        if (root->parent != NULL) {
+            if (root->parent->filsD == root)
+                root->parent->filsD = temp;
+            else if (root->parent->filsG == root)
+                root->parent->filsG = temp;
+        }
+
+        if (temp->filsD != NULL)
+            temp->filsD->parent = root;
+        
+        temp->parent = root->parent;
+        root->parent = temp;
+        root->filsG = temp->filsD;
+        temp->filsD = root;
+        *node = temp;
+    }
 }
 
+void arbre_RotGD (Bicolor * node) {
+    Bicolor root = * node;
+
+    if (root != NULL) {
+        if (root->filsD->filsG != NULL) {
+            arbre_RotD(&root->filsD);
+            arbre_RotG(&root);
+        }
+    }
+}
+
+void arbre_RotDG (Bicolor* node) {
+	Bicolor root = * node;
+
+	if (root != NULL) {
+		if (root->filsG->filsD != NULL) {
+			arbre_RotG(&root->filsG);
+			arbre_RotD(&root);
+		}
+	}
+}
 
 int arbre_hauteur (Bicolor arbre) {
     return (arbre == NULL) ? 0 : MAX(arbre_hauteur(arbre->filsD), arbre_hauteur(arbre->filsG)) + 1;
@@ -96,49 +147,127 @@ void arbre_recurive_insert (Noeud * node, Bicolor root) {
     node->color = RED;
 }
 
-void arbre_balance (Noeud * node) {
-    // si on est à la racine de l'arbre
-    if (node->parent == NULL)
-            node->color = BLACK;
-    
-    // si le père est BLACK
-    else if (node->parent->color == BLACK)
-        return;
-    
-    // si le père est RED
-    else if (node->parent->color == RED) {
-        node->parent->color = BLACK;
-        arbre_uncle(node)->color = BLACK;
+void arbre_balance (Bicolor node) {
+    /*Bicolor node_parent = NULL;
+    Bicolor node_grandParent = NULL;
+
+    while ((node != root) && (node->color != BLACK) && (node->parent->color == RED)) {
+        node_parent = node->parent;
+        node_grandParent = node->parent->parent;
+
+        // cas A: le parent de node est l'enfant gauche du grand parent
+        if (node_parent == node_grandParent->filsG) {
+            Bicolor node_uncle = node_grandParent->filsD;
+
+            // cas A.1: l'oncle de node est RED, on ne fait que recolorer l'arbre
+            if (node_uncle != NULL && node_uncle->color == RED) {
+                node_grandParent->color = RED;
+                node_parent->color = BLACK;
+                node_uncle->color = BLACK;
+                node = node_grandParent;
+            } else {
+                // cas A.2: node est le fils droit de son parent, on fait une rotation a gauche
+                if (node == node_parent->filsD) {
+                    arbre_RotG(&node_parent);
+                    node = node_parent;
+                    node_parent = node->parent;
+                }
+
+                // cas A.3: node est le fils gauche de son parent, on faut une rotation a droite
+                arbre_RotD(&node_grandParent);
+                
+                // on échange les coleurs de node_parent et de node_grandParent
+                int temp_color = node_parent->color;
+                node_parent->color = node_grandParent->color;
+                node_grandParent->color = temp_color;
+
+                node = node_parent;
+            }   
+        }
+        // cas b: node_parent est le fils droit de node_grandParent
+        else {
+            Bicolor node_uncle = node_grandParent->filsG;
         
-        Noeud * grandParent = arbre_grand_parent(node);
-        grandParent->color = RED;
-        arbre_balance(grandParent);
+            // cas B.1: node_uncle est RED on ne fait que recolorer
+            if ((node_uncle != NULL) && (node_uncle->color == RED)) {
+                node_grandParent->color = RED;
+                node_parent->color = BLACK;
+                node_uncle->color = BLACK;
+                node = node_grandParent;
+            } else {
+                // cas B.2: node est l'enfant gauche de node_parent, on fait une rotation a droite
+                if (node == node_parent->filsG) {
+                    arbre_RotD(&node_parent);
+                    node = node_parent;
+                    node_parent = node->parent;
+                }
+
+                // cas B.3: node est l'enfant droit de node_parent, rotation gauche
+                arbre_RotG(&node_grandParent);
+
+                // on échange les coleurs de node_parent et de node_grandParent
+                int temp_color = node_parent->color;
+                node_parent->color = node_grandParent->color;
+                node_grandParent->color = temp_color;
+                
+                node = node_parent;
+            }
+        }
+
+        root->color = BLACK;
+    } */
+
+    Bicolor p = node->parent;
+    Bicolor u = arbre_uncle(node);
+    Bicolor g = arbre_grand_parent(node);
+
+    // cas root mais déja traité auparavant
+    if (node->parent == NULL) { 
+        node->color = BLACK;
+    } else if(p->color == BLACK){
+        printf("rien\n");
+    } else if(u != NULL && u->color == RED){
+        p->color = BLACK;
+        u->color = BLACK;
+        g->color = RED;
+        printf("cas 3 \n");
+        if(g->parent == NULL){
+        printf("parent Vide\n");
+        }
+        arbre_balance(g);
     }
-    // si l'oncle du noeud courant est RED
-    else if (arbre_uncle(node)->color == RED) {
-        Noeud *parent = node->parent;
-        Noeud *grandParent = arbre_grand_parent(node);
-
-        // si le noeud courant est à droite de son parent qui est a gauche de son propre parent
-        if (node == grandParent->filsG->filsD) {
-            arbre_RotG(parent);
-            node = node->filsG;
+    else{
+        printf("cas 4\n");
+        //gauche droit => double rot D G
+        if(p == g->filsG && node == g->filsG->filsD){
+            printf("petit a\n");
+            arbre_RotDG(&g);
+            node->color = BLACK;
+            node->filsD->color = RED;
+            node->filsG->color = RED;
         }
-        // si le noeud courant est à gauche de son parent qui est a droite de son propre parent
-        else if (node == grandParent->filsD->filsG) {
-            arbre_RotD(parent);
-            node = node->filsD; 
+        //droit gauche => double rot G D
+        else if(p == g->filsD && node == g->filsD->filsG){
+            printf("petit b\n");
+            arbre_RotGD(&g);
+            node->color = BLACK;
+            node->filsD->color = RED;
+            node->filsG->color = RED;
         }
-
-        // si le noeud courant est situé à gauche de son parent
-        if (node == parent->filsG)
-            arbre_RotD(grandParent);
-        // si le noeud courant est situé à droite de son parent
-        else
-            arbre_RotG(grandParent);
-        
-        parent->color = BLACK;
-        grandParent->color = RED;
+        else if(p == g->filsD && node == p->filsD){
+            arbre_RotG(&g);
+            p = node->parent;
+            p->color = BLACK;
+            p->filsD->color = RED;
+            p->filsG->color = RED;
+        }
+        else if(p == g->filsG && node == p->filsG){
+            arbre_RotD(&g);
+            p = node->parent;
+            p->color = BLACK;
+            p->filsD->color = RED;
+            p->filsG->color = RED;
+        }
     }
 }
 
@@ -186,7 +315,7 @@ int arbre_compare (Bicolor a, Bicolor b) {
 }
 
 void arbre_print (Bicolor arbre, int n) {
-    if (arbre) {
+    if (arbre != NULL) {
         printf("Layer %d:\n", n);
         printf("%d > %d\n", arbre->element, arbre->color);
         arbre_print(arbre->filsG, n + 1);

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Bicolor.c" "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/CMakeFiles/main.dir/Bicolor.c.o"
-  "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/Main.c" "/home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/CMakeFiles/main.dir/Main.c.o"
+  "/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src/Bicolor.c" "/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/build/CMakeFiles/main.dir/Bicolor.c.o"
+  "/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src/Main.c" "/home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/build/CMakeFiles/main.dir/Main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

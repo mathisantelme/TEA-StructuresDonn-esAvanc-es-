@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/test-arbre_rotations.dir/test-arbre_rotations.c.o CMakeFiles/test-arbre_rotations.dir/__/Bicolor.c.o  -o test-arbre_rotations 

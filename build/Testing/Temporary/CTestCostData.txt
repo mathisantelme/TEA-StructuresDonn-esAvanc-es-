@@ -1,11 +1,12 @@
-test-abre_grand_parent 1 0.00129104
-test-arbre_add_element 1 0.000962973
-test-arbre_balance 1 0.0020268
-test-arbre_compare 1 0.00111294
-test-arbre_create 1 0.000915051
-test-arbre_grand_parent 1 0.00104904
-test-arbre_hauteur 1 0.00150895
-test-arbre_nb_noeud 1 0.00124097
-test-arbre_recursive_insert 1 0.00105
-test-arbre_uncle 1 0.00129318
+test-abre_grand_parent 7 0.00018658
+test-arbre_add_element 7 0.000289985
+test-arbre_balance 7 0.000150306
+test-arbre_compare 7 0.000138862
+test-arbre_create 7 0.000127588
+test-arbre_grand_parent 1 0.00239587
+test-arbre_hauteur 7 0.000148433
+test-arbre_nb_noeud 7 0.000328575
+test-arbre_recursive_insert 7 0.000398976
+test-arbre_uncle 7 0.00018801
+test-arbre_rotations 4 0.000491738
 ---

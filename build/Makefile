@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src
+CMAKE_SOURCE_DIR = /home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build
+CMAKE_BINARY_DIR = /home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,9 +91,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/CMakeFiles /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/build/CMakeFiles /home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -135,6 +135,19 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
+# Target rules for targets named test-arbre_rotations
+
+# Build rule for target.
+test-arbre_rotations: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_rotations
+.PHONY : test-arbre_rotations
+
+# fast build rule for target.
+test-arbre_rotations/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_rotations.dir/build.make tests/CMakeFiles/test-arbre_rotations.dir/build
+.PHONY : test-arbre_rotations/fast
+
+#=============================================================================
 # Target rules for targets named test-arbre_recursive_insert
 
 # Build rule for target.
@@ -161,19 +174,6 @@ test-arbre_nb_noeud/fast:
 .PHONY : test-arbre_nb_noeud/fast
 
 #=============================================================================
-# Target rules for targets named test-arbre_hauteur
-
-# Build rule for target.
-test-arbre_hauteur: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_hauteur
-.PHONY : test-arbre_hauteur
-
-# fast build rule for target.
-test-arbre_hauteur/fast:
-	$(MAKE) -f tests/CMakeFiles/test-arbre_hauteur.dir/build.make tests/CMakeFiles/test-arbre_hauteur.dir/build
-.PHONY : test-arbre_hauteur/fast
-
-#=============================================================================
 # Target rules for targets named test-arbre_add_element
 
 # Build rule for target.
@@ -198,6 +198,19 @@ test-abre_grand_parent: cmake_check_build_system
 test-abre_grand_parent/fast:
 	$(MAKE) -f tests/CMakeFiles/test-abre_grand_parent.dir/build.make tests/CMakeFiles/test-abre_grand_parent.dir/build
 .PHONY : test-abre_grand_parent/fast
+
+#=============================================================================
+# Target rules for targets named test-arbre_hauteur
+
+# Build rule for target.
+test-arbre_hauteur: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_hauteur
+.PHONY : test-arbre_hauteur
+
+# fast build rule for target.
+test-arbre_hauteur/fast:
+	$(MAKE) -f tests/CMakeFiles/test-arbre_hauteur.dir/build.make tests/CMakeFiles/test-arbre_hauteur.dir/build
+.PHONY : test-arbre_hauteur/fast
 
 #=============================================================================
 # Target rules for targets named test-arbre_compare
@@ -250,19 +263,6 @@ test-arbre_create: cmake_check_build_system
 test-arbre_create/fast:
 	$(MAKE) -f tests/CMakeFiles/test-arbre_create.dir/build.make tests/CMakeFiles/test-arbre_create.dir/build
 .PHONY : test-arbre_create/fast
-
-#=============================================================================
-# Target rules for targets named test-arbre_grand_parent
-
-# Build rule for target.
-test-arbre_grand_parent: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-arbre_grand_parent
-.PHONY : test-arbre_grand_parent
-
-# fast build rule for target.
-test-arbre_grand_parent/fast:
-	$(MAKE) -f tests/CMakeFiles/test-arbre_grand_parent.dir/build.make tests/CMakeFiles/test-arbre_grand_parent.dir/build
-.PHONY : test-arbre_grand_parent/fast
 
 Bicolor.o: Bicolor.c.o
 
@@ -328,16 +328,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... test"
+	@echo "... test-arbre_rotations"
 	@echo "... test-arbre_recursive_insert"
 	@echo "... test-arbre_nb_noeud"
-	@echo "... test-arbre_hauteur"
 	@echo "... test-arbre_add_element"
 	@echo "... test-abre_grand_parent"
+	@echo "... test-arbre_hauteur"
 	@echo "... test-arbre_compare"
 	@echo "... test-arbre_uncle"
 	@echo "... test-arbre_balance"
 	@echo "... test-arbre_create"
-	@echo "... test-arbre_grand_parent"
 	@echo "... Bicolor.o"
 	@echo "... Bicolor.i"
 	@echo "... Bicolor.s"

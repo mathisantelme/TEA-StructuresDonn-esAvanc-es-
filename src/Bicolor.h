@@ -26,21 +26,24 @@ typedef struct Noeud {
 typedef Noeud * pt_Arbre;
 typedef pt_Arbre Bicolor;
 
-Bicolor arbre_create (Element e);//
-int arbre_hauteur (Bicolor arbre);//
-int arbre_nb_noeuds (Bicolor arbre);//
-Bicolor arbre_grand_parent (Bicolor arbre);//
-Bicolor arbre_uncle (Bicolor arbre);//
+Bicolor arbre_create (Element e);
+int arbre_hauteur (Bicolor arbre);
+int arbre_nb_noeuds (Bicolor arbre);
+Bicolor arbre_grand_parent (Bicolor arbre);
+Bicolor arbre_uncle (Bicolor arbre);
 
-void arbre_RotG (Noeud * root);
-void arbre_RotD (Noeud * root);
+void arbre_RotG (Bicolor * node);
+void arbre_RotD (Bicolor * node);
+void arbre_RotGD (Bicolor * node);
+void arbre_RotDG (Bicolor* node);
+
 
 void arbre_free (Bicolor arbre);
 int arbre_compare (Bicolor a, Bicolor b);//
 void arbre_print (Bicolor arbre, int n);
 
 void arbre_recurive_insert (Noeud * node, Bicolor root);//
-void arbre_balance (Noeud * root);
+void arbre_balance (Bicolor node);
 Bicolor arbre_add_element (Noeud * node, Bicolor root);
 
 /*

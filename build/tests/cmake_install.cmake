@@ -1,4 +1,4 @@
-# Install script for directory: /home/kalhan/Documents/FAC/L3/StructuresDonnées/TP/TEA-StructuresDonn-esAvanc-es-/src/tests
+# Install script for directory: /home/kalhan/Documents/FAC/L3/Semestre_5/StructuresDonnées/TEA/src/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
